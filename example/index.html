@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Example</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../noah.css" rel="stylesheet">
+
+    <style>
+      body {
+        position: relative;
+        padding-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">Example</a>
+          <ul class="nav">
+
+            <li class="dropdown">
+            <a role="button" href="javascript:void(0);"
+              class="dropdown-toggle" data-toggle="dropdown">Pages<b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="javascript:void(0);" tabindex="-1"
+                class="transition" data-target="pageIndex">Index</a></li>
+              <li><a href="javascript:void(0);" tabindex="-1"
+                class="transition" data-target="pageForm">Form</a></li>
+              <li><a href="javascript:void(0);" tabindex="-1"
+                class="transition" data-target="pageDialog">Dialog</a></li>
+              <li><a href="./addressbook.html" tabindex="-1">Address book</a></li>
+              <li><a href="./order.html" tabindex="-1">Order</a></li>
+            </ul>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+
+      <!-- Index -->
+      <div id="pageIndex" class="page" data-label="Index">
+        <h1>Index</h1>
+        <ul>
+          <li><a href="javascript:void(0);"
+            class="transition" data-target="pageForm">Form</a></li>
+          <li><a href="javascript:void(0);"
+            class="transition" data-target="pageDialog">Dialog</a></li>
+          <li><a href="./addressbook.html">Address book</a></li>
+          <li><a href="./order.html">Order</a></li>
+        </ul>
+      </div>
+
+
+      <!-- Form -->
+      <div id="pageForm" class="page" data-label="Form">
+        <h1>Form</h1>
+
+        <form id="form" class="form-horizontal">
+          <legend>Sign up</legend>
+
+          <div class="control-group">
+            <label class="control-label" for="inputName">Name</label>
+            <div class="controls">
+              <input id="inputName" type="text" name="name" placeholder="Name">
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="inputEmail">Email</label>
+            <div class="controls">
+              <input id="inputEmail" type="text" name="email" placeholder="Email">
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">Password</label>
+            <div class="controls">
+              <input id="inputPassword" type="password" name="password" placeholder="">
+              <span class="help-block">[a-zA-Z0-9_-]</span>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="inputSex">Sex</label>
+            <div class="controls">
+              <label class="radio inline">
+                <input type="radio" name="sex" value="male" checked />Male
+              </label>
+              <label class="radio inline">
+                <input type="radio" name="sex" value="female" />Female
+              </label>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="inputJob">Job</label>
+            <div class="controls">
+              <select id="inputJob" name="job">
+                <option value=""></option>
+                <option value="manager">Manager</option>
+                <option value="programmer">Programmer</option>
+                <option value="designer">Designer</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="controls">
+              <label class="checkbox">
+                <input type="checkbox" name="accept">Accept
+              </label>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="inputNote">Note</label>
+            <div class="controls">
+              <textarea id="inputNote" name="note"></textarea>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="controls">
+              <a class="btn transition" data-target="pageIndex">Cancel</a>
+              <button type="submit" class="btn btn-primary">Sign up</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+
+      <!-- Dialog -->
+      <div id="pageDialog" class="page" data-label="Dialog">
+        <h1>Dialog</h1>
+
+        <a class="btn open" data-target="dialog">Open dialog</a>
+
+        <div class="modal dialog" id="dialog" tabindex="-1" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h3>Dialog</h3>
+          </div>
+          <div class="modal-body">
+            body
+          </div>
+          <div class="modal-footer">
+            <a class="btn" data-dismiss="modal">Close</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="../noah.js"></script>
+  </body>
+</html>

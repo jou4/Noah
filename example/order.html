@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Order</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../noah.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+
+
+      <div id="pageOrders" class="page">
+        <h1>Orders</h1>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Date</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="ordersTableBody">
+            <tr class="origin">
+              <td data-name="order_id"></td>
+              <td data-name="customer_name"></td>
+              <td data-name="date"></td>
+              <td><a class="transition" href="javascript:void(0);" data-target="pagePurchase">View</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <div id="pagePurchase" class="page">
+        <h1>Purchase</h1>
+        <dl>
+          <dt>Order ID</dt>
+          <dd data-name="order_id"></dd>
+          <dt>Customer</dt>
+          <dd><a class="open" href="javascript:void(0);"
+            data-name="customer_name" data-target="dialogHistory"></a></dd>
+          <dt>Date</dt>
+          <dd data-name="date"></dd>
+        </dl>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Product ID</th>
+              <th>Product</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="purchagesTableBody">
+            <tr class="origin">
+              <td data-name="product_id"></td>
+              <td data-name="product_name"></td>
+              <td data-name="price"></td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <a class="btn transition" data-target="pageOrders"><i class="icon-remove"></i>Close</a>
+        </div>
+      </div>
+
+
+      <div id="dialogHistory" class="modal dialog">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><i class="icon-remove"></i></button>
+          <h3>History</h3>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Date</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="historyTableBody">
+              <tr class="origin">
+                <td data-name="order_id"></td>
+                <td data-name="date"></td>
+                <td><a class="transition" href="javascript:void(0);"
+                    data-target="pagePurchase" data-dismiss="modal">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <a class="btn" data-dismiss="modal"><i class="icon-remove"></i>Close</a>
+        </div>
+      </div>
+
+
+    </div><!-- end of container -->
+
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="../noah.js"></script>
+    <script src="js/order.js"></script>
+  </body>
+</html>

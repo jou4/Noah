@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Address book</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../noah.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+
+
+      <div id="pageList" class="page">
+        <h1>List</h1>
+        <a id="newButton" class="btn transition" href="javascript:void(0);"
+          data-target="pageDetail"><i class="icon-plus"></i>New</a>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Tel</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr class="origin">
+              <td data-name="name"></td>
+              <td data-name="email"></td>
+              <td data-name="tel"></td>
+              <td><a class="transition" href="javascript:void(0);" data-target="pageDetail">Edit</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <div id="pageDetail" class="page">
+        <h1>Detail</h1>
+        <form id="formDetail" class="form-horizontal">
+          <div class="control-group">
+            <label class="control-label" for="inputName">Name</label>
+            <div class="controls">
+              <input id="inputName" type="text" name="name" placeholder="Name..">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputTel">Email</label>
+            <div class="controls">
+              <input id="inputEmail" type="text" name="email" placeholder="Email..">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputTel">Tel</label>
+            <div class="controls">
+              <input id="inputTel" type="text" name="tel" placeholder="Tel..">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="controls">
+              <a class="btn transition" data-target="pageList"><i class="icon-remove"></i>Cancel</a>
+              <button type="submit" class="btn btn-primary"><i class="icon-ok icon-white"></i>Update</button>
+            </div>
+          </div>
+      </div>
+
+
+    </div><!-- end of container -->
+
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="../noah.js"></script>
+    <script src="js/addressbook.js"></script>
+  </body>
+</html>
