@@ -1,15 +1,13 @@
 # Noah
-## プロトタイプ作成支援ツール
+## プロトタイプ作成支援
 
 アプリケーションのプロトタイプ作成を支援するJavascriptです。
-ページ遷移や入力フォームなどの機能を簡単に実現します。
-また疑似RDB機能を持つため、実際のアプリケーションの動作と同じように
-データの検索や追加、更新といった機能も手軽に盛り込めます。
+ページ遷移や入力フォームを扱うためのユーティリティやRDB操作を擬似的に行う機能を持ちます。
 サーバー環境は不要で、HTMLとJavascript、CSSファイルだけで、
-実際に動くプロトタイプを手軽に実装しアプリケーション設計やユーザーへのデモに
-利用することを目的としています。
+実際に動くプロトタイプを手軽に実装したいなと思い作成しました。
 
-## 各機能について
+
+## 機能
 ### ページ
 
 class="page"を付与することで、個々のページを表現します。
@@ -35,6 +33,7 @@ class="transition"をボタンに付与することで、ページ遷移機能�
       <div><a class="btn transition" data-target="pageA">Go to pageA</div>
     </div>
 
+
 ### ダイアログ
 
 class="modal dialog"を付与することで、個々のダイアログを表現します。
@@ -52,9 +51,10 @@ class="open"をボタンに付与することで、モーダルダイアログ�
       <a class="btn" data-dismiss="modal">Close</a>
     </div>
 
+
 ### 入力フォーム
 
-jQuery.fn.formは、フォームに入力された値の取得、フォームへの値の配布を行う関数です。
+jQuery.fn.formは、入力された値の取得、フォームへの値の配布を行う関数です。
 
     <form id="myForm">
       <p>Name: <input type="text" name="name" /></p>
@@ -112,9 +112,8 @@ jQuery.fn.cartridgeにより、テーブルの各行のような要素に対し�
     })
 
 
-## 疑似RDB
+## 疑似RDB操作
 
-データをRDB風に処理できます。
 以下のようなデータを考えます。
 
     var Members = [
@@ -147,7 +146,7 @@ jQuery.fn.cartridgeにより、テーブルの各行のような要素に対し�
 
 ### 検索
 
-以下のJavascriptコードで検索を行えます。
+検索してみます。
 
     Noah.db(Members).where1(1).get1()
     Noah.db(Members).where1("id", 1).get1()
@@ -178,7 +177,7 @@ jQuery.fn.cartridgeにより、テーブルの各行のような要素に対し�
     Noah.db(Members).delete("id", 5)
 
 
-## ライセンス
+## License
 
 Copyright (C) 2012 K.Kamitsukasa.
 Licensed under the MIT License (http://www.opensource.org/licenses/mit-license.php)
