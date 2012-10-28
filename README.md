@@ -155,6 +155,8 @@ jQuery.fn.cartridgeにより、テーブルの各行のような要素に対し�
 関数を渡すこともできます。
 
     Noah.db(Members).where(function(row){ return row.id < 3 }).get()
+    Noah.db(Members).where(function(row){
+      return row.email.indexOf("@example.com") >= 0 }).get()
 
 結合してみます。
 
@@ -177,8 +179,14 @@ jQuery.fn.cartridgeにより、テーブルの各行のような要素に対し�
     Noah.db(Members).delete("id", 5)
 
 
+## Dependencies
+
+* [jQuery](http://jquery.com/)
+* [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
+
+
 ## License
 
 Copyright (C) 2012 K.Kamitsukasa.
-Licensed under the MIT License (http://www.opensource.org/licenses/mit-license.php)
+Licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
 
